@@ -1,14 +1,17 @@
-import React, { Components } from 'react';
+import React from 'react';
 import './cat-list.css'
 
-export default () => {
+export default (props) => {
+
+    const catNames = props.cats.map(cat =>{
+        return <li className="list-group-item" > { cat.name } </li>
+    })
+
     return (
         <div>
-            <h3>Catalyst</h3>
+            <h3>Click on a Cat</h3>
             <ul className="list-group" >
-                <li className="list-group-item" >Cat 1</li>
-                <li className="list-group-item" >Cat 2</li>
-                <li className="list-group-item" >Cat 3</li>
+                { catNames }
             </ul>
         </div>
     )
