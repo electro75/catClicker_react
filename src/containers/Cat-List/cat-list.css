@@ -1,0 +1,12 @@
+.list-group {
+    width: 200px;
+    margin-left: 5%
+}
+
+.list-group-item {
+    height: 80px;
+}
+
+img {
+    max-height: 50px
+}
