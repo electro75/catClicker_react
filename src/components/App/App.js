@@ -16,9 +16,15 @@ class App extends Component {
           <img src={catLogo} className="App-logo" alt="logo" />
           <h1 className="App-title">Catalyst</h1>
         </header>
-        <div className="mainContainer" >
-          <CatList/>
-          <CatDetail/>
+        <div className="container" >
+          <div className="row">
+            <div className="col-sm-4">
+              <CatList/>
+            </div>
+            <div className="col-sm-5">
+              <CatDetail/>  
+            </div>
+          </div>
         </div>
       </div>
     );
