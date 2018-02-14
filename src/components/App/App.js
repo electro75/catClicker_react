@@ -5,6 +5,7 @@ import catLogo from '../../cat.svg';
 import './App.css';
 
 import CatList from '../../containers/Cat-List/cat-list';
+import CatDetail from '../../containers/Cat-Detail/cat-detail';
 
 class App extends Component {
 
@@ -15,8 +16,9 @@ class App extends Component {
           <img src={catLogo} className="App-logo" alt="logo" />
           <h1 className="App-title">Catalyst</h1>
         </header>
-        <div>
+        <div className="mainContainer" >
           <CatList/>
+          <CatDetail/>
         </div>
       </div>
     );
