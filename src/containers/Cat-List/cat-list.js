@@ -7,7 +7,8 @@ import './cat-list.css'
 
 class CatList extends Component {
 
-   
+
+
     renderList() {
         return this.props.cats.map(cat=>{
             return (
