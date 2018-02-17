@@ -6,3 +6,10 @@ export function selectCat(cat) {
         payload: cat
     };
 }
+
+export function catClick(cat) {
+    return {
+        type: 'CAT_CLICK',
+        payload: cat
+    }
+}

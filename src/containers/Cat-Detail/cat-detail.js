@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { catClick } from '../../actions/index'
 
 class CatDetail extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            clicks: this.props.activeCat ? this.props.activeCat.clicks : 0 
-        }
+        // this.state = {
+        //     clicks: this.props.activeCat ? this.props.activeCat.clicks : 0 
+        // }
         this.handleClick = this.handleClick.bind(this);
     }
  
     handleClick(event) {
-        console.log(this.props);
-        this.props.activeCat.clicks ++;
-        this.setState({
-            clicks: this.props.activeCat.clicks
-        })
-        
+        // console.log(this.props);
+        // this.props.activeCat.clicks ++;
+        // this.setState({
+        //     clicks: this.props.activeCat.clicks
+        // })
+        this.props.catClick(this.props.activeCat);
     }
     
     render() {
@@ -47,4 +50,8 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps)(CatDetail);
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({ catClick }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CatDetail);

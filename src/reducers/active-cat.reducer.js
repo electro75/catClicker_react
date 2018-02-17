@@ -3,6 +3,12 @@ export default function(state = null, action) {
         case 'CAT_SELECTED':
             console.log(action.payload);
             return action.payload
+
+        case 'CAT_CLICK':
+            return  
+
+        default:
+            return state
     }
-    return state
+    
 }
