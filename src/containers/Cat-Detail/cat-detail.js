@@ -6,6 +6,8 @@ import { catClick } from '../../actions/index'
 
 class CatDetail extends Component {
 
+    //the commented code was my initial logic for updating the clicks property, but this was i end
+    //up manipulating the component level state. This reverts back to original when activeCat is changed.
     constructor(props) {
         super(props);
         // this.state = {
