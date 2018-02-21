@@ -20,7 +20,7 @@ class CatDetail extends Component {
         // this.setState({
         //     clicks: this.props.activeCat.clicks
         // })
-        this.props.catClick(this.props.activeCat);
+        this.props.catClick(this.props.activeCat.name);
     }
     
     render() {
