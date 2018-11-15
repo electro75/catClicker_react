@@ -12,10 +12,11 @@ class CatList extends Component {
     renderList() {
         return this.props.cats.map(cat=>{
             return (
+                
                 <li className="list-group-item"
                     key={ cat.name }
                     style={{cursor: 'pointer'}}
-                    onClick = { ()=>this.props.selectCat(cat) } > 
+                    onClick = { ()=>this.props.selectCat(cat) } >
                     { cat.name } 
                     <span className="pull-right" >
                         <img src={ cat.src } className="img-responsive" alt="" />

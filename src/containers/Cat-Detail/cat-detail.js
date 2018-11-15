@@ -14,6 +14,7 @@ class CatDetail extends Component {
         //     clicks: this.props.activeCat ? this.props.activeCat.clicks : 0 
         // }
         this.handleClick = this.handleClick.bind(this);
+        // console.log(this.props.cats);
     }
  
     handleClick(event) {
@@ -22,7 +23,8 @@ class CatDetail extends Component {
         // this.setState({
         //     clicks: this.props.activeCat.clicks
         // })
-        this.props.catClick(this.props.activeCat.name);
+        this.props.catClick(this.props.activeCat);
+        // this.props.activeCat.clicks = this.props.activeCat.clicks + 1;
     }
     
     render() {
@@ -31,12 +33,16 @@ class CatDetail extends Component {
                 <h4>Please Select a Cat</h4>
             )
         }
-        const cat = this.props.activeCat
+       
         return (
             <div>
-                <h3>{ cat.name } No. of clicks: { cat.clicks }  </h3>
+                <h3>{ this.props.activeCat.name } No. of clicks: { this.props.activeCat.clicks }  </h3>
                 <span>
-                    <img src={ cat.src } className="img-responsive" onClick={ this.handleClick }  style={{maxHeight: '450px'}} />
+                    <img src={ this.props.activeCat.src } 
+                        className="img-responsive"
+                        onClick={ this.handleClick }
+                        style={{maxHeight: '450px'}} 
+                        alt=""/>
                 </span>
             </div>
             
@@ -48,7 +54,8 @@ class CatDetail extends Component {
 
 function mapStateToProps(state){
     return {
-        activeCat: state.activeCat
+        cats        : state.cats,
+        activeCat   : state.cats[state.activeCat]
     }
 }
 
